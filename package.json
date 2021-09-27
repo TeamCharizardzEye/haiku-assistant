@@ -1,0 +1,52 @@
+{
+  "name": "haiku-assistant",
+  "version": "1.0.0",
+  "description": "An application for creating the best haikus possible",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node server/server.js",
+    "build": "NODE_ENV=production webpack",
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/server.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamCharizardzEye/haiku-assistant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeamCharizardzEye/haiku-assistant/issues"
+  },
+  "homepage": "https://github.com/TeamCharizardzEye/haiku-assistant#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.8",
+    "passport": "^0.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.5",
+    "react-router": "^5.2.1",
+    "redux": "^4.1.1",
+    "tailwindcss": "^2.2.16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.2.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.3.0",
+    "enzyme": "^3.11.0",
+    "jest": "^27.2.2",
+    "nodemon": "^2.0.13",
+    "style-loader": "^3.3.0",
+    "supertest": "^6.1.6",
+    "webpack": "^5.54.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0"
+  }
+}
