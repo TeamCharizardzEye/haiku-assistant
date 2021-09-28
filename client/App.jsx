@@ -5,10 +5,12 @@ class App extends Component {
     super(props);
   }
 
-  render () {
-    return (
-      <p>Hello from React</p>
-    )
+  render() {
+    return(
+      <div>
+        App Component!
+      </div>
+    );
   }
 }
 
