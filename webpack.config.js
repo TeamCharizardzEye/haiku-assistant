@@ -26,8 +26,13 @@ module.exports = {
     ]
   },
   devServer: {
+    open: true,
     hot: true,
     publicPath: '/build/',
+    // static: {
+    //   directory: path.join(__dirname, '/client/index.js'),
+    //   publicPath: '/build/',
+    // },
     proxy: {
       '/': 'http://localhost:3000',
     }
