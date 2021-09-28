@@ -2,12 +2,12 @@
   "name": "haiku-assistant",
   "version": "1.0.0",
   "description": "An application for creating the best haikus possible",
-  "main": "webpack.config.js",
+  "main": "./client/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production node server/server.js",
     "build": "NODE_ENV=production webpack",
-    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/server.js\""
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve\" \"cross-env NODE_ENV=development nodemon server/server.js\""
   },
   "repository": {
     "type": "git",
@@ -43,10 +43,11 @@
     "enzyme": "^3.11.0",
     "jest": "^27.2.2",
     "nodemon": "^2.0.13",
+    "redux-devtools-extension": "^2.13.9",
     "style-loader": "^3.3.0",
     "supertest": "^6.1.6",
     "webpack": "^5.54.0",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.3.0"
+    "webpack-dev-server": "3.11.0"
   }
 }
