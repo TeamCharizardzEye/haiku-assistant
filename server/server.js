@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
-const path = require('path');
+
+const path = require("path");
+const cookieParser = require('cookie-parser');
 
 // Routers
 const authRouter = require('./routers/authRouter');
@@ -10,8 +12,12 @@ const haikuRouter = require('./routers/haikuRouter');
 
 const PORT = 3000;
 
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
+
+// Main page, assets
+app.use('/', express.static(path.join(__dirname, '../client/index.html')));
 
 // API routes
 app.use('/auth', authRouter);
@@ -36,7 +42,7 @@ app.use((err, req, res, next) => {
   const defaultError = {
     log: 'Express error handler caught unknown middleware error',
     status: 400,
-    message: { err: 'An error occurred' }, 
+    message: { err: 'An error occurred' },
   };
   const errorObj = Object.assign(defaultError, err);
   console.log(errorObj.log);
