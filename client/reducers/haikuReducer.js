@@ -129,6 +129,9 @@ const haikusReducer = (state = initialState, action) => {
         textLine3: [],
       };
     }
+
+    default:
+      return state;
   }
 };
 
