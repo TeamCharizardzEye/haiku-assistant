@@ -9,7 +9,7 @@ router.get('/',
   gifsController.externalLookup,
   gifsController.addToCache,
   (req, res) => {
-    res.status(200).send('gif URI string');
+    res.status(200).json(res.locals.result);
 });
 
 module.exports = router;
