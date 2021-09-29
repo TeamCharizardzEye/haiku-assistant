@@ -3,7 +3,7 @@ const router = express.Router();
 const dictController = require('../controllers/dictController');
 
 // Check the cache for a word, perform external lookup if necessary, add results to cache
-router.get('/', 
+router.post('/', 
   dictController.checkCache, 
   dictController.externalLookup, 
   dictController.addToCache, 
