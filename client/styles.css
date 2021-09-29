@@ -1,0 +1,11 @@
+.haiku-container {
+  background-color: lavender;
+  width: 40%;
+  height: 100vh;
+  /* display: flex; */
+  justify-content: center;
+}
+
+.haiku-btn-wrap {
+  
+}
