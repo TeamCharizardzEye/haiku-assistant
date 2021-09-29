@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-const mongoose = require('mongoose');
-=======
 const mongoose = require("mongoose");
->>>>>>> dev
 const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
 const SALT_WORK_FACTOR = 10;
@@ -21,11 +17,7 @@ const userSchema = new Schema({
   haikuID: Array,
 });
 
-<<<<<<< HEAD
-userSchema.pre(['save', 'get'], function (next) {
-=======
 userSchema.pre(['save', 'get'], function(next) {
->>>>>>> dev
   const user = this;
   // Generate a salt
   bcrypt.genSalt(SALT_WORK_FACTOR, function (err, salt) {
@@ -40,8 +32,4 @@ userSchema.pre(['save', 'get'], function(next) {
   });
 });
 
-<<<<<<< HEAD
-module.exports = mongoose.model('User', userSchema);
-=======
 module.exports = mongoose.model("User", userSchema);
->>>>>>> dev
