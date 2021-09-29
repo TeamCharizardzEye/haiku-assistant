@@ -11,8 +11,6 @@ mongoose
   .then(() => console.log("Connected to Mongo DB."))
   .catch((err) => console.log(err));
 
-//add in password encryption
-
 const userSchema = new Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
