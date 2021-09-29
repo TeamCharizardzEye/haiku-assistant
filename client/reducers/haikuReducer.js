@@ -1,7 +1,7 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-  title: '',
+  title: [],
   textLine1: [],
   textLine2: [],
   textLine3: [],

@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
 .haiku-container {
   background-color: lavender;
   width: 40%;
