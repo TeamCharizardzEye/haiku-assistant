@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
+<<<<<<< HEAD
 const path = require('path');
+=======
+const path = require("path");
+>>>>>>> dev
 const cookieParser = require('cookie-parser');
 
 // Routers
