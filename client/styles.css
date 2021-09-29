@@ -1,4 +1,4 @@
-body {
+* {
   font-family: 'Roboto Mono', monospace;
 }
 
@@ -14,6 +14,54 @@ body {
   justify-content: center;
 }
 
+#title-logo {
+  font-size: 42px;
+  text-align: center;
+}
+
+#writing-pane-field {
+  display: flex;
+  margin: 0 auto;
+  width: 60%;
+  height: 30px;
+  font-size: 18px;
+  padding: 10px;
+}
+
 .haiku-btn-wrap {
-  
+  display: table;
+  margin: 0 auto;
+}
+
+.haiku-btn-wrap > button {
+  margin: 20px 14px;
+  padding: 6px 20px;
+  font-size: 18px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.poemLineDisplay {
+  margin: 10px;
+}
+
+.poemLineDisplay > div {
+  margin: 10px;
+}
+
+#save-btn {
+  padding: 6px 20px;
+  font-size: 18px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  display: flex;
+  margin: 0 auto;
 }
