@@ -2,6 +2,10 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
+.main-container {
+  display: flex;
+}
+
 .haiku-container {
   background-color: lavender;
   width: 40%;

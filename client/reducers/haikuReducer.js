@@ -21,20 +21,25 @@ const haikusReducer = (state = initialState, action) => {
       const reference = action.payload.reference;
 
       //check what gif ID is and reassign it in state
-      if (gifId === 1) {
+      if (gifId === 'textLine1') {
         return {
           ...state,
           gif1: reference,
         };
-      } else if (gifId === 2) {
+      } else if (gifId === 'textLine2') {
         return {
           ...state,
           gif2: reference,
         };
-      } else if (gifId === 3) {
+      } else if (gifId === 'textLine3') {
         return {
           ...state,
           gif3: reference,
+        };
+      } else {
+        console.log(gifId, reference);
+        return {
+          ...state,
         };
       }
       break;
