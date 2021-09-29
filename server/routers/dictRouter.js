@@ -8,7 +8,7 @@ router.get('/',
   dictController.externalLookup, 
   dictController.addToCache, 
   (req, res) => {
-    res.status(200).json({ word: 'bituminous' });
+    res.status(200).json(res.locals.result);
 });
 
 module.exports = router;
