@@ -1,62 +1,135 @@
-// import * as types from '../constants/actionTypes';
+import * as types from '../constants/actionTypes';
 
-//  const initialState = {
-//    totalMarkets: 0,
-//    totalCards: 0,
-//    marketList: [],
-//    lastMarketId: 10000,
-//    newLocation: '',
-//  };
- 
-//  const marketsReducer = (state = initialState, action) => {
-//    let marketList;
-   
-//    switch (action.type) {
-//      case types.ADD_MARKET: {
-//        //increment lastMarketId and totalMarkets counters
-//        const totalMarkets = state.totalMarkets + 1;
-//        const lastMarketId = state.lastMarketId + 1;
- 
-//        // create the new market object from provided data
-//        const newMarket = {
-//          marketId : lastMarketId,
-//          location: state.newLocation,
-//          cards: 0,
-//          percentOfTotal: 0,
-//        };
-       
-//        // push the new market onto a copy of the market list
-//        marketList = state.marketList.slice();
-//        marketList.push(newMarket);
- 
-//        // return updated state
-//        return {
-//          ...state,
-//          marketList,
-//          lastMarketId,
-//          totalMarkets,
-//          newLocation: '',
-//        }; 
-//      }
-       
-//      case types.SET_NEW_LOCATION: 
-//        const newLocation = action.payload;
- 
-//        return {
-//          ...state,
-//          newLocation,
-//        };
-      
-       
-//      case types.ADD_CARD:
-//        break;
-//      case types.DELETE_CARD: 
-//        break;
-//      default: {
-//        return state;
-//      }
-//    }
-//  };
- 
-//  export default marketsReducer;
- 
+const initialState = {
+  title: '',
+  textLine1: [],
+  textLine2: [],
+  textLine3: [],
+  userID: '',
+  synonyms: [],
+  rhymes: [],
+  savedHaikusList: [],
+  gif1: '',
+  gif2: '',
+  gif3: '',
+};
+
+const haikusReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case types.UPDATE_GIFS: {
+      const gifId = action.payload.gifID;
+      const reference = action.payload.reference;
+
+      //check what gif ID is and reassign it in state
+      if (gifId === 1) {
+        return {
+          ...state,
+          gif1: reference,
+        };
+      } else if (gifId === 2) {
+        return {
+          ...state,
+          gif2: reference,
+        };
+      } else if (gifId === 3) {
+        return {
+          ...state,
+          gif3: reference,
+        };
+      }
+      break;
+    }
+
+    /////////////////////////////////////////////////////////
+
+    case types.UPDATE_TEXT: {
+      const button = action.payload.button;
+      const input = action.payload.input;
+
+      if (button === 'textLine1') {
+        return {
+          ...state,
+          textLine1: input,
+        };
+      } else if (button === 'textLine2') {
+        return {
+          ...state,
+          textLine2: input,
+        };
+      } else if (button === 'textLine3') {
+        return {
+          ...state,
+          textLine3: input,
+        };
+      } else if (button === 'title') {
+        return {
+          ...state,
+          title: input,
+        };
+      }
+      break;
+    }
+
+    ////////////////////////////////////////////////////
+
+    case types.RETRIEVE_HAIKU_LIST: {
+      const haikuList = action.payload;
+
+      return {
+        ...state,
+        savedHaikusList: haikuList,
+      };
+    }
+
+    ////////////////////////////////////////////////////////
+
+    case types.RETRIEVE_SYNONYMS: {
+      const newSynonyms = action.payload;
+
+      return {
+        ...state,
+        synonyms: newSynonyms,
+      };
+    }
+
+    //////////////////////////////////////////////////////////
+
+    case types.RETRIEVE_RHYMES: {
+      const newRhymes = action.payload;
+
+      return {
+        ...state,
+        rhymes: newRhymes,
+      };
+    }
+    ///////////////////////////////////////////////////////////
+
+    case types.RETRIEVE_USER_ID: {
+      const id = action.payload;
+
+      return {
+        ...state,
+        userID: id,
+      };
+    }
+
+    /////////////////////////////////////////////////////////////
+
+    case types.RETRIEVE_HAIKU: {
+      const haikuInfo = action.payload;
+
+      //we can pull the specific haiku info and reassign the properties
+      //in state
+
+      return {
+        ...state,
+        title: '',
+        textLine1: [],
+        textLine2: [],
+        textLine3: [],
+      };
+    }
+  }
+};
+
+export default haikusReducer;

@@ -1,11 +1,7 @@
 const express = require('express');
 const app = express();
-<<<<<<< HEAD
 const path = require('path');
-=======
-const path = require("path");
 const cookieParser = require('cookie-parser');
->>>>>>> dev
 
 // Routers
 const authRouter = require('./routers/authRouter');
@@ -19,12 +15,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-<<<<<<< HEAD
-// Main page, assets
-app.use('/', express.static(path.join(__dirname, '../client/index.html')));
-
-=======
->>>>>>> dev
 // API routes
 app.use('/auth', authRouter);
 app.use('/dict', dictRouter);
