@@ -4,7 +4,7 @@ const gifsController = require('../controllers/gifsController');
 const router = express.Router();
 
 // Check the cache for a word, perform external lookup if necessary, add results to cache
-router.get('/', 
+router.post('/', 
   gifsController.checkCache,
   gifsController.externalLookup,
   gifsController.addToCache,

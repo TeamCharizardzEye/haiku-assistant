@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateTextActionCreator } from '../actions/actions.js';
+import { updateTextActionCreator, updateGifsActionCreator } from '../actions/actions.js';
 // import WritingPane from '../components/WritingPane.jsx';
 import PoemLineDisplay from '../components/PoemLineDisplay.jsx';
 
@@ -51,7 +51,28 @@ const WritingPane = ({
 
   const handleTextLine = (e) => {
     const wordArr = textLineInput.split(' ');
+    let response;
+
     dispatch(updateTextActionCreator(e.target.name, wordArr));
+
+    if (e.target.name !== 'title') {
+      fetch("gifs", {
+        method: "POST",
+        body: JSON.stringify({
+          'phrase': textLineInput
+        }),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then(data => data.json())
+        .then(data => {
+          console.log(data, e.target.name);
+          response = data;
+          return response;
+        }).then(response => {
+          dispatch(updateGifsActionCreator(e.target.name, response));
+        });
+    }
+
     document.getElementsByName("writing-pane-field")[0].value = '';
   }
 

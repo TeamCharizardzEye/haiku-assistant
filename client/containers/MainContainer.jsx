@@ -6,7 +6,7 @@ import SuggestionContainer from './SuggestionContainer.jsx';
 
 function MainContainer() {
   return (
-    <div className="App">
+    <div className="main-container">
       <AuthenticationContainer></AuthenticationContainer>
       <GifContainer></GifContainer>
       <HaikuContainer></HaikuContainer>

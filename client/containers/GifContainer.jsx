@@ -3,7 +3,7 @@ import GifWindow from '../components/GifWindow.jsx';
 
 function GifContainer() {
   return (
-    <div className="App">
+    <div className="gif-container">
       <GifWindow></GifWindow>
     </div>
   );
