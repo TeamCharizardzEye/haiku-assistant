@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 function SynonymsDisplay() {
-  return <div className="App"></div>;
+  return <div>Synonyms</div>;
 }
 
 export default SynonymsDisplay;
