@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-const mongoose = require('mongoose');
-=======
 const mongoose = require("mongoose");
 const bcrypt = require('bcrypt');
->>>>>>> dev
 const Schema = mongoose.Schema;
 const SALT_WORK_FACTOR = 10;
 
@@ -15,17 +11,12 @@ mongoose
   .then(() => console.log("Connected to Mongo DB."))
   .catch((err) => console.log(err));
 
-//add in password encryption
-
 const userSchema = new Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   haikuID: Array,
 });
 
-<<<<<<< HEAD
-module.exports = mongoose.model('User', userSchema);
-=======
 userSchema.pre(['save', 'get'], function(next) {
   const user = this;
   // Generate a salt
@@ -42,4 +33,3 @@ userSchema.pre(['save', 'get'], function(next) {
 });
 
 module.exports = mongoose.model("User", userSchema);
->>>>>>> dev
