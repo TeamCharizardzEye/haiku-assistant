@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-
 const path = require("path");
 const cookieParser = require('cookie-parser');
 
@@ -15,9 +14,6 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-
-// Main page, assets
-app.use('/', express.static(path.join(__dirname, '../client/index.html')));
 
 // API routes
 app.use('/auth', authRouter);
