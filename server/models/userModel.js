@@ -1,5 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
+//add in password encryption
 
 const userSchema = new Schema({
   username: { type: String, required: true, unique: true },
@@ -7,4 +9,4 @@ const userSchema = new Schema({
   haikuID: Array,
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model('User', userSchema);
