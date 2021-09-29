@@ -33,17 +33,41 @@ import React, { useState, useEffect } from 'react';
 //   "__v": 0
 // }
 
-const WritingPane = ({ handleChange }) => {
+const WritingPane = ({ 
+  handleChange
+ }) => {
+  const [textLine, setTextLine] = useState('');
+  const [textLine1, setTextLine1] = useState([]);
+  const [textLine2, setTextLine2] = useState([]);
+  const [textLine3, setTextLine3] = useState([]);
+  const textLineInput = document.getElementsByName("writing-pane-field").value
+
+  const handleTextLine = (e) => {
+    const wordArr = textLine.split(' ')
+    if (e.target.name === "textline-1") {
+      
+      console.log(wordArr, 'wordArr ')
+      setTextLine1([...wordArr])
+      console.log(textLine1, '1')
+        console.log(textLineInput, 'input')
+        console.log(textLineInput, "textline-1")
+
+    } else if (e.target.name === "textline-2") {
+      console.log(e.target.value, "textline-2")
+    } else if (e.target.name === "textline-3") {
+      console.log(e.target.value)
+    }
+  }
+
   return (
     <div>
       <div>Writing Pane</div>
-      <label>
+        <input name="writing-pane-field" type="text" placeholder="Your haiku is here..." onChange={e => setTextLine(e.target.value)}/>
         <input name="title" type="text" placeholder="Title is here..." onChange={handleChange}/>
-      </label>
       <div className="haiku-btn-wrap">
-        <button>5</button>
-        <button>7</button>
-        <button>5</button>
+        <button name="textline-1" onClick={handleTextLine}>5</button>
+        <button name="textline-2" onClick={handleTextLine}>7</button>
+        <button name="textline-3" onClick={handleTextLine}>5</button>
       </div>
     </div>
   )
@@ -78,7 +102,8 @@ const HaikuContainer = () => {
       <WritingPane 
         handleChange={handleChange}
       />
-      <PoemLineDisplay />
+      <PoemLineDisplay 
+      />
       <SaveButton 
         handleSave={handleSave} 
       />
