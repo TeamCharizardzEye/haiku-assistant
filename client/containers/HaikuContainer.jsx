@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { updateTextActionCreator, updateGifsActionCreator } from '../actions/actions.js';
 // import WritingPane from '../components/WritingPane.jsx';
 import PoemLineDisplay from '../components/PoemLineDisplay.jsx';
+import { TextField } from '@material-ui/core';
 
 // const dataObj = {
 //   "_id": "6153ae6ec2eed9ce28d1f72f",
@@ -78,8 +79,9 @@ const WritingPane = ({
 
   return (
     <div>
-      <div>Writing Pane</div>
-        <input name="writing-pane-field" type="text" placeholder="Your haiku is here..." onChange={e => textLineInput = e.target.value}/>
+      <h1 id="title-logo">Haiqoo!</h1>
+        {/* <TextField label="Your haiku is here..." variant="outlined" name="writing-pane-field" type="text" onChange={e => textLineInput = e.target.value}/> */}
+        <input id="writing-pane-field" name="writing-pane-field" type="text" placeholder="Your haiku is here..." onChange={e => textLineInput = e.target.value}/>
         {/* <input name="title" type="text" placeholder="Title is here..." onChange={handleChange}/> */}
       <div className="haiku-btn-wrap">
         <button name="title" onClick={handleTextLine}>Title</button>
@@ -94,7 +96,7 @@ const WritingPane = ({
 const SaveButton = ({ handleSave }) => {
   return (
     <div>
-      <button onClick={handleSave}>Save Haiku</button>
+      <button id="save-btn" onClick={handleSave}>Save Haiku</button>
     </div>
   )
 }
